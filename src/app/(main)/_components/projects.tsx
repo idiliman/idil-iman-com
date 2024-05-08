@@ -22,10 +22,13 @@ export default function Projects() {
       initial='hidden'
       animate='show'
     >
-      <Divider title='PROJECTS' className='py-5' />
+      <Divider title='WORKS' className='py-5' />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
-        <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
+        <ProjectCard videoUrl='/videos/sams.mov' title='Video' description='Video' />
+      </div>
+      <Divider title='HOBBY' className='py-5' />
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard videoUrl='/videos/sams.mov' title='Video' description='Video' />
       </div>

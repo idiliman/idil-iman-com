@@ -42,7 +42,7 @@ export default function Header() {
           ease: 'easeOut',
         }}
       >
-        <h2>1+ exp, doing a freelance work</h2>
+        <h2>...</h2>
       </motion.div>
     </motion.section>
   );

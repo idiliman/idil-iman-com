@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import SidebarRoutes from './sidebar-routes';
+import Header from './header';
 import { Separator } from '../ui/separator';
 
 type Props = {
@@ -11,7 +12,9 @@ export default function Sidebar({ className }: Props) {
     <div
       className={cn('flex flex-col lg:w-[256px] lg:fixed px-4 left-0 top-0 border-r-2 h-full bg-zinc-50', className)}
     >
-      <div className='p-4 flex flex-col space-y-4'>
+      <div className='p-4 flex flex-col space-y-4 pt-[50px]'>
+        <Header />
+        <Separator />
         <SidebarRoutes
           title='Works'
           links={[
