@@ -1,9 +1,10 @@
 'use client';
 
-import { Separator } from '@/components/ui/separator';
-import { motion } from 'framer-motion';
 import ProjectCard from './project-card';
 import Divider from './divider';
+import StacksCarousel from './carousell';
+
+import { motion } from 'framer-motion';
 
 export default function Projects() {
   return (
@@ -21,14 +22,17 @@ export default function Projects() {
       initial='hidden'
       animate='show'
     >
-      <Divider title='PROJECTS' className='py-4' />
+      <Divider title='PROJECTS' className='py-5' />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard videoUrl='/videos/sams.mov' title='Video' description='Video' />
       </div>
-      <Divider title='STACKS' className='py-4' />
+      <Divider title='STACKS' className='py-5' />
+      <div className='relative h-[120px]'>
+        <StacksCarousel />
+      </div>
     </motion.section>
   );
 }

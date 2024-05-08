@@ -8,7 +8,9 @@ type Props = {
 
 export default function Sidebar({ className }: Props) {
   return (
-    <div className={cn('flex flex-col lg:w-[256px] lg:fixed px-4 left-0 top-0 border-r-2 h-full', className)}>
+    <div
+      className={cn('flex flex-col lg:w-[256px] lg:fixed px-4 left-0 top-0 border-r-2 h-full bg-zinc-50', className)}
+    >
       <div className='p-4 flex flex-col space-y-4'>
         <SidebarRoutes
           title='Works'
