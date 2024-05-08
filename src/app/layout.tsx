@@ -1,5 +1,6 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import { Nunito, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
 const font = Inter({ subsets: ['latin'] });
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
