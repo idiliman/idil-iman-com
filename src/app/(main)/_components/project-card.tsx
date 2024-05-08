@@ -3,14 +3,14 @@ import Image from 'next/image';
 import Video from './video';
 import { Suspense } from 'react';
 
-interface Props {
+type Props = {
   image?: string | undefined;
   title: string;
   description: string;
   height?: string | undefined;
   width?: string | undefined;
   videoUrl?: string | undefined;
-}
+};
 export default function ProjectCard({
   description = 'Description',
   height,

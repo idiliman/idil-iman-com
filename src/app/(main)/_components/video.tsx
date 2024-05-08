@@ -1,6 +1,6 @@
-interface Props {
+type Props = {
   url: string;
-}
+};
 export default async function Video({ url }: Props) {
   // await new Promise((resolve) => setTimeout(resolve, 1000));
 

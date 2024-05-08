@@ -3,6 +3,7 @@
 import { Separator } from '@/components/ui/separator';
 import { motion } from 'framer-motion';
 import ProjectCard from './project-card';
+import Divider from './divider';
 
 export default function Projects() {
   return (
@@ -20,16 +21,14 @@ export default function Projects() {
       initial='hidden'
       animate='show'
     >
-      <div className='mb-4'>
-        <Separator className='my-4' />
-        <h1 className='text-xs'>PROJECTS</h1>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6'>
+      <Divider title='PROJECTS' className='py-4' />
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard videoUrl='/videos/sams.mov' title='Video' description='Video' />
       </div>
+      <Divider title='STACKS' className='py-4' />
     </motion.section>
   );
 }
