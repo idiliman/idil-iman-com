@@ -29,8 +29,8 @@ export default function Projects() {
         <ProjectCard image='/note-icon.png' title='Apple' description='Notes' />
         <ProjectCard videoUrl='/videos/sams.mov' title='Video' description='Video' />
       </div>
-      <Divider title='STACKS' className='py-5' />
-      <div className='relative h-[120px]'>
+      <Divider title='STACKS' className='md:py-5 py-0' />
+      <div className='relative h-[100px] md:h-[115px] w-full'>
         <StacksCarousel />
       </div>
     </motion.section>

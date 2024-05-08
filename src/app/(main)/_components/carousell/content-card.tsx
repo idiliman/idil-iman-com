@@ -13,7 +13,7 @@ export default function ContentCard({ imgUrl, label }: Props) {
 
   return (
     <motion.div
-      className='relative overflow-hidden h-[100px] min-w-[100px] rounded-xl flex justify-center items-center'
+      className='relative overflow-hidden h-[100px] w-[100px] rounded-xl flex justify-center items-center'
       key={imgUrl}
       onHoverStart={() => setShowOverlay(true)}
       onHoverEnd={() => setShowOverlay(false)}
