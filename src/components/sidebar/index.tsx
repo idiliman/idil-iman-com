@@ -16,19 +16,10 @@ export default function Sidebar({ className }: Props) {
         <Header />
         <Separator />
         <SidebarRoutes
-          title='Works'
-          links={[
-            { href: '/', label: 'Project 1' },
-            { href: '/', label: 'Project 2' },
-          ]}
-        />
-        <SidebarRoutes title='Personal Projects' links={[{ href: '/', label: 'Project 1' }]} />
-        <SidebarRoutes
           title='Contact'
           links={[
             { href: 'mailto:idil.iman1999@gmail.com', label: 'Mail' },
-            { href: '/', label: 'Linkedin' },
-            { href: '/', label: 'CV' },
+            { href: 'https://www.linkedin.com/in/idil-iman/', label: 'Linkedin' },
           ]}
         />
       </div>

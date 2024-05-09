@@ -1,4 +1,4 @@
 export const NavLinks = [
   { href: '/', label: 'About' },
-  { href: '/', label: 'CV' },
+  { href: '/resume_idil_2024.pdf', label: 'CV' },
 ];

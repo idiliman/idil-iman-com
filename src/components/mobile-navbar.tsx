@@ -15,7 +15,7 @@ export default function MobileNavbar({ className }: Props) {
         className
       )}
     >
-      <div className='flex justify-between items-center w-full pt-3 px-5 text-sm'>
+      <div className='flex justify-between items-center w-full  px-5 text-sm'>
         <Logo />
         <ul className='flex space-x-3'>
           {NavLinks.map((link) => (
