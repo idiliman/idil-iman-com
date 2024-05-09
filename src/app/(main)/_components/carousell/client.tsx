@@ -59,17 +59,17 @@ export default function StacksCarouselClient() {
   return (
     <div>
       <motion.div
-        className='inset-x-0 flex gap-4 z-0 absolute w-full items-center justify-center'
-        style={{ x: xTranslation }}
-        ref={ref}
-        onHoverStart={() => {
-          setMustFinish(true);
-          setDuration(SLOW_DURATION);
-        }}
-        onHoverEnd={() => {
-          setMustFinish(true);
-          setDuration(FAST_DURATION);
-        }}
+        className='flex gap-4 z-0 absolute w-full items-center justify-center'
+        // style={{ x: xTranslation }}
+        // ref={ref}
+        // onHoverStart={() => {
+        //   setMustFinish(true);
+        //   setDuration(SLOW_DURATION);
+        // }}
+        // onHoverEnd={() => {
+        //   setMustFinish(true);
+        //   setDuration(FAST_DURATION);
+        // }}
       >
         {images.map((item) => (
           <ContentCard key={item.imgUrl} imgUrl={`${item.imgUrl}`} label={item.label} />

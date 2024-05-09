@@ -29,7 +29,7 @@ export default function ContentCard({ imgUrl, label }: Props) {
           >
             <div className='absolute bg-black pointer-events-none opacity-50 h-full w-full' />
             <motion.h1
-              className='bg-white font-semibold text-sm z-10 p-1 rounded-full flex items-center gap-[0.5ch] hover:opacity-75'
+              className='bg-white font-semibold z-10 p-1 rounded-full flex items-center gap-[0.5ch] hover:opacity-75 text-xs'
               initial={{ y: 10 }}
               animate={{ y: 0 }}
               exit={{ y: 10 }}
