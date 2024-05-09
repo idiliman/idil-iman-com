@@ -39,7 +39,7 @@ export default function SamsClient() {
         }}
       >
         <ProjectDetails
-          className='max-w-5xl h-full'
+          className='max-w-5xl h-full mx-auto'
           title='Apple'
           description='Modern'
           paragraphs={[
