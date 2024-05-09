@@ -20,6 +20,7 @@ export default function Sidebar({ className }: Props) {
           links={[
             { href: 'mailto:idil.iman1999@gmail.com', label: 'Mail' },
             { href: 'https://www.linkedin.com/in/idil-iman/', label: 'Linkedin' },
+            { href: 'https://github.com/idiliman', label: 'Github' },
           ]}
         />
       </div>
