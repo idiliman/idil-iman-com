@@ -30,7 +30,7 @@ export default function Header() {
           type: 'spring',
         }}
       >
-        <p className='text-4xl'>Hello there,...</p>
+        <p className='text-4xl'>Fullstack Developer</p>
       </motion.div>
       <motion.div
         variants={{
@@ -42,7 +42,7 @@ export default function Header() {
           ease: 'easeOut',
         }}
       >
-        <h2>...</h2>
+        <h2>Lets keep those pixels popping !!</h2>
       </motion.div>
     </motion.section>
   );
