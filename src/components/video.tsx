@@ -4,11 +4,7 @@ type Props = {
   url: string;
 };
 
-export default async function Video({ url }: Props) {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-
+export default function Video({ url }: Props) {
   return (
     <video
       aria-label='Video player'
