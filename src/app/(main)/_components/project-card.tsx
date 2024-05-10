@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import Video from '@/components/video';
+import Video, { VideoSkeleton } from '@/components/video';
 import { Suspense } from 'react';
 import Link from 'next/link';
 
@@ -33,7 +33,7 @@ export default function ProjectCard({
           )}
         >
           {videoUrl ? (
-            <Suspense fallback={<>Loading...</>}>
+            <Suspense fallback={<VideoSkeleton />}>
               <div className='p-4'>
                 <Video url={videoUrl} />
               </div>

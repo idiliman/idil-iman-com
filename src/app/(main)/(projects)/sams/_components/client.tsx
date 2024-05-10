@@ -1,9 +1,10 @@
 'use client';
 
 import ProjectDetails from '../../_components/project-details';
-import Video from '@/components/video';
+import Video, { VideoSkeleton } from '@/components/video';
 
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { Suspense } from 'react';
 
 export default function SamsClient() {
   return (
@@ -29,7 +30,9 @@ export default function SamsClient() {
           show: { opacity: 1, y: 0, transition: { delay: 0.1 } },
         }}
       >
-        <Video url='/videos/sams.mov' />
+        <Suspense fallback={<VideoSkeleton />}>
+          <Video url='/videos/sams.mov' />
+        </Suspense>
       </motion.div>
       <motion.div
         className='px-6 md:px-0 text-sm md:text-base w-full h-full'
@@ -39,7 +42,7 @@ export default function SamsClient() {
         }}
       >
         <ProjectDetails
-          className='max-w-5xl h-full mx-auto'
+          className='max-w-3xl h-full mx-auto '
           title='Apple'
           description='Modern'
           paragraphs={[
