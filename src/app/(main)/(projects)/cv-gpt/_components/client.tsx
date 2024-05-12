@@ -48,7 +48,7 @@ export default function CvGptClient() {
           paragraphs={[
             <p key={1}>
               CV GPT is a web app that generates a cover letter based on the user&apos;s input. The app uses the OpenAI
-              API to generate the resume content.
+              API to generate the content.
             </p>,
             <p key={1}>
               This is a hobby project that I built to learn how to use the OpenAI API and to experiment with it. I also
