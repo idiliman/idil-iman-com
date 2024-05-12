@@ -43,12 +43,12 @@ export default function Projects() {
         <Divider title='HOBBY' className='py-5' />
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           <ProjectCard
-            image='/vercel.svg'
+            videoUrl='/videos/cvgpt.mov'
             title='CV GPT'
             description='CV Generator with AI'
             hoverItems={[
               <HoverItems key={1} icon={<Link2 className='w-5 h-5' />} url='https://cv-gpt.vercel.app/' />,
-              <HoverItems key={2} icon={<MoreHorizontal className='w-5 h-5' />} url='' />,
+              <HoverItems key={2} icon={<MoreHorizontal className='w-5 h-5' />} url='/cv-gpt' blogUrl />,
               <HoverItems key={2} icon={<GithubIcon className='w-5 h-5' />} url='https://github.com/idiliman/cv-gpt' />,
             ]}
           />
