@@ -33,6 +33,7 @@ export default function ProjectCard({
       className='flex flex-col space-y-2 flex-1'
       onHoverStart={() => setShowOverlay(true)}
       onHoverEnd={() => setShowOverlay(false)}
+      onClick={() => setShowOverlay(!showOverlay)}
     >
       <div
         className={cn(

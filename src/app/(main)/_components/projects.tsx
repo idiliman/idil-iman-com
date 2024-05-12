@@ -5,7 +5,6 @@ import Divider from './divider';
 import StacksCarousel from './carousell';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import HoverItems from './hover-items';
 import { GithubIcon, Link2, MoreHorizontal } from 'lucide-react';
 
@@ -37,7 +36,7 @@ export default function Projects() {
             videoUrl='/videos/sams.mov'
             title='Sports Aviation Management System'
             description='CMS'
-            hoverItems={[<HoverItems key={2} icon={<MoreHorizontal className='w-5 h-5' />} url='/sams' blogUrl />]}
+            hoverItems={[<HoverItems key={1} icon={<MoreHorizontal className='w-5 h-5' />} url='/sams' blogUrl />]}
           />
         </div>
         <Divider title='HOBBY' className='py-5' />
@@ -49,7 +48,7 @@ export default function Projects() {
             hoverItems={[
               <HoverItems key={1} icon={<Link2 className='w-5 h-5' />} url='https://cv-gpt.vercel.app/' />,
               <HoverItems key={2} icon={<MoreHorizontal className='w-5 h-5' />} url='/cv-gpt' blogUrl />,
-              <HoverItems key={2} icon={<GithubIcon className='w-5 h-5' />} url='https://github.com/idiliman/cv-gpt' />,
+              <HoverItems key={3} icon={<GithubIcon className='w-5 h-5' />} url='https://github.com/idiliman/cv-gpt' />,
             ]}
           />
         </div>
