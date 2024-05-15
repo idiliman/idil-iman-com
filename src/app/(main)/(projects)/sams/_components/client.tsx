@@ -43,8 +43,8 @@ export default function SamsClient() {
       >
         <ProjectDetails
           className='max-w-3xl h-full mx-auto '
-          title='Apple'
-          description='Modern'
+          title='Sports Aviation Management System'
+          description='CMS'
           paragraphs={[
             <p key={1}>
               This CMS is designed specifically for managing content for phone apps. I&apos;ve developed a robust
