@@ -10,7 +10,7 @@ export default function HoverItems({ url, label, icon, blogUrl }: Props) {
   const target = blogUrl ? '_self' : '_blank';
   return (
     <Link target={target} href={url} className='flex items-center justify-center text-black'>
-      <div className='bg-white p-3 hover:opacity-90 text-xs flex items-center justify-center rounded-full cursor-pointer'>
+      <div className='bg-slate-100 p-3 hover:opacity-90 text-xs flex items-center justify-center rounded-full cursor-pointer'>
         {icon}
       </div>
     </Link>
