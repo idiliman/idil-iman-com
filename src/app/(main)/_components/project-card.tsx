@@ -38,16 +38,12 @@ export default function ProjectCard({
     >
       <div
         className={cn(
-          'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50',
-          height ? `h-[${height}]` : 'h-auto',
-          width ? `w-[${height}]` : 'w-auto'
+          'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 w-full h-full'
         )}
       >
         {videoUrl ? (
           <Suspense fallback={<VideoSkeleton />}>
-            <div className='p-4'>
-              <Video url={videoUrl} initialPlaybackRate={initialPlaybackRate} />
-            </div>
+            <Video url={videoUrl} initialPlaybackRate={initialPlaybackRate} className='h-[90%] w-full' />
           </Suspense>
         ) : (
           <Image alt={title} src={image ?? ''} width={200} height={200} />

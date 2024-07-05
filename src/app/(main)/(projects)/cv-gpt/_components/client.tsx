@@ -27,14 +27,15 @@ export default function CvGptClient() {
       animate='show'
     >
       <motion.div
-        className='px-[40px] py-[20px] bg-zinc-50 h-full
-         w-full'
+        className='px-[40px] py-[20px] bg-zinc-50 h-[300px] md:h-[500px]
+         w-full overflow-hidden'
         variants={{
           hidden: { opacity: 0, y: 50 },
           show: { opacity: 1, y: 0, transition: { delay: 0.1 } },
         }}
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
+        onClick={() => setShowOverlay(!showOverlay)}
       >
         <div
           className={

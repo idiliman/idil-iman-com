@@ -28,14 +28,15 @@ export default function CaloriesTrackerAiClient() {
       animate='show'
     >
       <motion.div
-        className='px-[40px] py-[20px] bg-zinc-50 h-full
-         w-full'
+        className='px-[40px] py-[20px] bg-zinc-50 h-[300px] md:h-[500px]
+         w-full overflow-hidden'
         variants={{
           hidden: { opacity: 0, y: 50 },
           show: { opacity: 1, y: 0, transition: { delay: 0.1 } },
         }}
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
+        onClick={() => setShowOverlay(!showOverlay)}
       >
         <div
           className={
@@ -86,12 +87,12 @@ export default function CaloriesTrackerAiClient() {
       >
         <ProjectDetails
           className='max-w-3xl h-full mx-auto '
-          title='CV GPT'
+          title='Calories Tracker'
           description=''
           paragraphs={[
             <p key={1}>
-              Calories Tracker AI is a web app that uses OpenAI GPT4O to detect calories and macronutrients from the
-              image provided by the user.
+              Calories Tracker is a web app that uses OpenAI GPT4O to detect calories and macronutrients from the image
+              provided by the user.
             </p>,
             <p key={1}>
               This project use{' '}

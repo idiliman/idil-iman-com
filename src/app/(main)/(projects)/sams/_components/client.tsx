@@ -25,22 +25,23 @@ export default function SamsClient() {
       animate='show'
     >
       <motion.div
-        className='px-[40px] py-[20px] bg-zinc-50 h-full
-         w-full'
+        className='px-[40px] py-[20px] bg-zinc-50 h-[300px] md:h-[500px]
+         w-full overflow-hidden'
         variants={{
           hidden: { opacity: 0, y: 50 },
           show: { opacity: 1, y: 0, transition: { delay: 0.1 } },
         }}
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
+        onClick={() => setShowOverlay(!showOverlay)}
       >
         <div
           className={
-            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-[500px] w-full overflow-hidden'
+            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-full w-full overflow-hidden'
           }
         >
           <Suspense fallback={<VideoSkeleton />}>
-            <Video url='/videos/sams.mov' className='h-[300px] lg:h-[450px]' />
+            <Video url='/videos/sams.mov' className='w-full h-full' />
           </Suspense>
 
           {/* Hover overlay */}
