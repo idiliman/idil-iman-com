@@ -27,7 +27,7 @@ export default function CvGptClient() {
       animate='show'
     >
       <motion.div
-        className='px-[40px] py-[20px] bg-zinc-50 h-[300px] md:h-[500px]
+        className='px-[40px] py-[20px] bg-zinc-50 h-full
          w-full overflow-hidden'
         variants={{
           hidden: { opacity: 0, y: 50 },
@@ -39,11 +39,11 @@ export default function CvGptClient() {
       >
         <div
           className={
-            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-[500px] w-full overflow-hidden'
+            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-[200px] md:h-[500px] w-full overflow-hidden'
           }
         >
           <Suspense fallback={<VideoSkeleton />}>
-            <Video url='/videos/cvgpt.mov' className='h-[300px] lg:h-[450px]' />
+            <Video url='/videos/cvgpt.mov' />
           </Suspense>
           {/* Hover overlay */}
           <AnimatePresence>

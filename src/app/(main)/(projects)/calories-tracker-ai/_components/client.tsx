@@ -28,7 +28,7 @@ export default function CaloriesTrackerAiClient() {
       animate='show'
     >
       <motion.div
-        className='px-[40px] py-[20px] bg-zinc-50 h-[300px] md:h-[500px]
+        className='px-[40px] py-[20px] bg-zinc-50 h-full
          w-full overflow-hidden'
         variants={{
           hidden: { opacity: 0, y: 50 },
@@ -40,11 +40,11 @@ export default function CaloriesTrackerAiClient() {
       >
         <div
           className={
-            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-[500px] w-full overflow-hidden'
+            'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 h-[200px] md:h-[500px] w-full overflow-hidden'
           }
         >
           <Suspense fallback={<VideoSkeleton />}>
-            <Video url='/videos/calories-tracker.mov' className='h-[300px] lg:h-[450px]' initialPlaybackRate={1.5} />
+            <Video url='/videos/calories-tracker.mov' initialPlaybackRate={1.5} />
           </Suspense>
 
           {/* Hover overlay */}
@@ -58,7 +58,8 @@ export default function CaloriesTrackerAiClient() {
               >
                 <div className='absolute bg-slate-800/50 pointer-events-none opacity-50 h-full w-full' />
                 <div className='space-x-2 flex'>
-                  <HoverItems key={1} icon={<Link2 className='w-5 h-5' />} url='https://cal-tracker-ai.vercel.app/' />,
+                  <HoverItems key={1} icon={<Link2 className='w-5 h-5' />} url='https://cal-tracker-ai.vercel.app/' />
+                  ,
                   <HoverItems
                     key={2}
                     icon={<MoreHorizontal className='w-5 h-5' />}
