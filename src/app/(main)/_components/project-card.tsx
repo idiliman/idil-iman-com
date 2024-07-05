@@ -14,8 +14,8 @@ type Props = {
   height?: string | undefined;
   width?: string | undefined;
   videoUrl?: string | undefined;
-
   hoverItems?: JSX.Element[] | undefined;
+  initialPlaybackRate?: number;
 };
 export default function ProjectCard({
   description = 'Description',
@@ -25,6 +25,7 @@ export default function ProjectCard({
   width,
   videoUrl,
   hoverItems,
+  initialPlaybackRate,
 }: Props) {
   const [showOverlay, setShowOverlay] = useState(false);
 
@@ -45,7 +46,7 @@ export default function ProjectCard({
         {videoUrl ? (
           <Suspense fallback={<VideoSkeleton />}>
             <div className='p-4'>
-              <Video url={videoUrl} />
+              <Video url={videoUrl} initialPlaybackRate={initialPlaybackRate} />
             </div>
           </Suspense>
         ) : (

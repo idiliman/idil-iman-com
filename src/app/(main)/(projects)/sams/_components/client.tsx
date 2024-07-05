@@ -31,7 +31,7 @@ export default function SamsClient() {
         }}
       >
         <Suspense fallback={<VideoSkeleton />}>
-          <Video url='/videos/sams.mov' />
+          <Video url='/videos/sams.mov' className='h-[300px] lg:h-[450px]' />
         </Suspense>
       </motion.div>
       <motion.div

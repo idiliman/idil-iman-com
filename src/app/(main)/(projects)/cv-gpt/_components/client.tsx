@@ -31,7 +31,7 @@ export default function CvGptClient() {
         }}
       >
         <Suspense fallback={<VideoSkeleton />}>
-          <Video url='/videos/cvgpt.mov' />
+          <Video url='/videos/cvgpt.mov' className='h-[300px] lg:h-[450px]' />
         </Suspense>
       </motion.div>
       <motion.div

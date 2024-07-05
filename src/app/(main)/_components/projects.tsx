@@ -51,6 +51,21 @@ export default function Projects() {
               <HoverItems key={3} icon={<GithubIcon className='w-5 h-5' />} url='https://github.com/idiliman/cv-gpt' />,
             ]}
           />
+          <ProjectCard
+            initialPlaybackRate={2}
+            videoUrl='/videos/calories-tracker.mov'
+            title='Calories Tracker'
+            description='Calories Tracker with AI'
+            hoverItems={[
+              <HoverItems key={1} icon={<Link2 className='w-5 h-5' />} url='https://cal-tracker-ai.vercel.app' />,
+              <HoverItems key={2} icon={<MoreHorizontal className='w-5 h-5' />} url='/calories-tracker-ai' blogUrl />,
+              <HoverItems
+                key={3}
+                icon={<GithubIcon className='w-5 h-5' />}
+                url='https://github.com/idiliman/cal-tracker-ai'
+              />,
+            ]}
+          />
         </div>
         <Divider title='STACKS' className='md:py-5 py-0' />
         <div className='relative h-[100px] md:h-[115px] w-full'>

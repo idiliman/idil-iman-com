@@ -1,24 +1,40 @@
 import { Skeleton } from './ui/skeleton';
 
+import { cn } from '@/lib/utils';
+import { useEffect, useRef } from 'react';
+
 type Props = {
   url: string;
+  initialPlaybackRate?: number;
+  className?: string;
 };
 
-export default function Video({ url }: Props) {
+export default function Video({ url, initialPlaybackRate = 1, className }: Props) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.playbackRate = initialPlaybackRate;
+    }
+  }, [initialPlaybackRate]);
+
   return (
-    <video
-      aria-label='Video player'
-      autoPlay
-      loop
-      muted
-      className='h-full w-full'
-      disablePictureInPicture
-      playsInline
-      controls={false}
-    >
-      <source src={url} type='video/mp4' />
-      Your browser does not support the video tag.
-    </video>
+    <div className={cn('w-full h-full relative', className)}>
+      <video
+        ref={ref}
+        aria-label='Video player'
+        autoPlay
+        loop
+        muted
+        className='h-full w-full'
+        disablePictureInPicture
+        playsInline
+        controls={false}
+      >
+        <source src={url} type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   );
 }
 
