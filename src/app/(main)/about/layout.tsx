@@ -23,7 +23,7 @@ async function Distance() {
   let distance: string | null = null;
   const response = await fetch(`${ABSOLUTE_URL}/api/geo`, {
     method: "POST",
-    body: JSON.stringify({ visitorCity: city }),
+    body: JSON.stringify({ visitorCity: JSON.stringify(city) }),
   });
   if (response.ok) {
     distance = await response.json();
@@ -31,7 +31,7 @@ async function Distance() {
 
   return (
     <div className="text-sm text-gray-500">
-      You are in {city}, roughly {distance} km from me
+      You are in {JSON.stringify(city)}, roughly {distance} km from me
     </div>
   );
 }
