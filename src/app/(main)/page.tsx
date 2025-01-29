@@ -1,6 +1,12 @@
-import Header from "./_components/header";
 import Projects from "./_components/projects";
+import Section from "./_components/section";
 
-export default function Home() {
-  return <div className="p-4 md:p-7 flex flex-col flex-1 pt-20 md:pt-20 lg:pt-6 max-w-7xl mx-auto"></div>;
+export default async function Home() {
+  return (
+    <main className="">
+      <Section title="Hobbies">
+        <Projects />
+      </Section>
+    </main>
+  );
 }

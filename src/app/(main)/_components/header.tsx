@@ -1,12 +1,11 @@
-'use client';
+"use client";
 
-import { Separator } from '@/components/ui/separator';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Header() {
   return (
     <motion.section
-      className='text-zinc-500'
+      className="text-zinc-500 sticky top-0 hidden lg:flex"
       variants={{
         hidden: { opacity: 0 },
         show: {
@@ -16,8 +15,8 @@ export default function Header() {
           },
         },
       }}
-      initial='hidden'
-      animate='show'
+      initial="hidden"
+      animate="show"
     >
       <motion.div
         variants={{
@@ -26,11 +25,12 @@ export default function Header() {
         }}
         transition={{
           delay: 0.1,
-          ease: 'easeOut',
-          type: 'spring',
+          ease: "easeOut",
+          type: "spring",
         }}
       >
-        <p className='text-4xl'>Fullstack Developer</p>
+        {/* <p className='text-4xl'>Fullstack Developer</p> */}
+        <h1>Header</h1>
       </motion.div>
       <motion.div
         variants={{
@@ -39,10 +39,10 @@ export default function Header() {
         }}
         transition={{
           delay: 0.1,
-          ease: 'easeOut',
+          ease: "easeOut",
         }}
       >
-        <h2>Lets keep those pixels popping !!</h2>
+        {/* <h2>Lets keep those pixels popping !!</h2> */}
       </motion.div>
     </motion.section>
   );

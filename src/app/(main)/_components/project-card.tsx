@@ -1,73 +1,85 @@
-import Video, { VideoSkeleton } from '@/components/video';
+import { FlickeringGrid } from "@/components/fickering-grid";
+import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { Suspense, useState } from 'react';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Link2 } from 'lucide-react';
-
-type Props = {
-  image?: string | undefined;
+interface ProjectCardProps {
   title: string;
   description: string;
-  height?: string | undefined;
-  width?: string | undefined;
-  videoUrl?: string | undefined;
-  hoverItems?: JSX.Element[] | undefined;
-  initialPlaybackRate?: number;
+  year: string;
+  image: string | undefined;
+  link: string;
+}
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.48, 0.15, 0.25, 0.96],
+    },
+  },
 };
-export default function ProjectCard({
-  description = 'Description',
-  height,
-  image,
-  title = 'Title',
-  width,
-  videoUrl,
-  hoverItems,
-  initialPlaybackRate,
-}: Props) {
-  const [showOverlay, setShowOverlay] = useState(false);
 
+const imageVariant = {
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.4,
+      ease: [0.48, 0.15, 0.25, 0.96],
+    },
+  },
+};
+
+const textVariant = {
+  hover: {
+    y: -5,
+    transition: {
+      duration: 0.4,
+      ease: [0.48, 0.15, 0.25, 0.96],
+    },
+  },
+};
+
+export default function ProjectCard({ title, description, year, image, link }: ProjectCardProps) {
   return (
-    <motion.div
-      className='flex flex-col space-y-2 flex-1'
-      onHoverStart={() => setShowOverlay(true)}
-      onHoverEnd={() => setShowOverlay(false)}
-      onClick={() => setShowOverlay(!showOverlay)}
-    >
-      <div
-        className={cn(
-          'relative border shadow-sm hover:shadow-lg rounded-md hover:-translate-y-1 transition aspect-square flex items-center justify-center bg-zinc-50 w-full h-full'
-        )}
-      >
-        {videoUrl ? (
-          <Suspense fallback={<VideoSkeleton />}>
-            <Video url={videoUrl} initialPlaybackRate={initialPlaybackRate} className='h-[90%] w-full' />
-          </Suspense>
-        ) : (
-          <Image alt={title} src={image ?? ''} width={200} height={200} />
-        )}
-
-        {/* Hover overlay */}
-        <AnimatePresence>
-          {showOverlay && (
-            <motion.div
-              className='absolute left-0 top-0 bottom-0 right-0 z-10 flex justify-center items-center'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <div className='absolute bg-slate-800/50 pointer-events-none opacity-50 h-full w-full' />
-              <div className='space-x-2 flex'>{hoverItems}</div>
-            </motion.div>
+    <div className="group relative overflow-hidden rounded-lg bg-white">
+      <Link href={link}>
+        <div className="relative aspect-[16/9] overflow-hidden">
+          {image ? (
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          ) : (
+            <FlickeringGrid
+              className="z-0 absolute inset-0 size-full"
+              squareSize={4}
+              gridGap={6}
+              color="#6B7280"
+              maxOpacity={0.5}
+              flickerChance={0.1}
+              height={800}
+              width={800}
+            />
           )}
-        </AnimatePresence>
-      </div>
-      <div className='text-sm'>
-        <h1 className='text-zinc-600'>{title}</h1>
-        <p className='text-zinc-400'>{description}</p>
-      </div>
-    </motion.div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <p className="text-sm text-gray-200">{description}</p>
+            </div>
+            <span className="text-sm text-gray-300">{year}</span>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 }

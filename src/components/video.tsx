@@ -1,7 +1,8 @@
-import { Skeleton } from './ui/skeleton';
+"use client";
 
-import { cn } from '@/lib/utils';
-import { useEffect, useRef } from 'react';
+import { Skeleton } from "./ui/skeleton";
+import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 type Props = {
   url: string;
@@ -19,19 +20,22 @@ export default function Video({ url, initialPlaybackRate = 1, className }: Props
   }, [initialPlaybackRate]);
 
   return (
-    <div className={cn('w-full h-full relative', className)}>
+    <div className={cn("w-full h-[450px]", className)}>
       <video
         ref={ref}
-        aria-label='Video player'
+        aria-label="Video player"
         autoPlay
         loop
         muted
-        className='h-full w-full'
+        className="h-full w-full"
         disablePictureInPicture
         playsInline
         controls={false}
       >
-        <source src={url} type='video/mp4' />
+        <source
+          src={url}
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -40,8 +44,8 @@ export default function Video({ url, initialPlaybackRate = 1, className }: Props
 
 export const VideoSkeleton = () => {
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center'>
-      <Skeleton className='h-[200px] w-[250px]' />
+    <div className="w-full h-full flex flex-col items-center justify-center">
+      <Skeleton className="h-[200px] w-[250px]" />
     </div>
   );
 };

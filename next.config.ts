@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  pageExtensions: ["md", "mdx", "ts", "tsx"],
   eslint: {
     ignoreDuringBuilds: true,
   },
   experimental: {
     ppr: true,
+    mdxRs: true,
   },
   logging: {
     fetches: {
@@ -13,6 +16,18 @@ const nextConfig: NextConfig = {
       hmrRefreshes: true,
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+});
+
+// Merge MDX config with Next.js config
+export default withMDX(nextConfig);
