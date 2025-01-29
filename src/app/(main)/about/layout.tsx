@@ -14,8 +14,10 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
 }
 
 async function Distance() {
+  const ABSOLUTE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://idiliman.com/";
+
   let geo: { distance: string; city: string } | null = null;
-  const response = await fetch("http://localhost:3000/api/geo");
+  const response = await fetch(`${ABSOLUTE_URL}/api/geo`);
   if (response.ok) {
     geo = await response.json();
   }
