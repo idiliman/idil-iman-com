@@ -12,7 +12,7 @@ export function GET(request: Request) {
 
   const distance = haversine(Number(latitude), Number(longitude), KL_LAT, KL_LON);
 
-  return new Response(JSON.stringify({ distance, city }));
+  return new Response(JSON.stringify({ distance: distance.toFixed(2), city }));
 }
 
 function haversine(lat1: number, lon1: number, lat2: number, lon2: number) {

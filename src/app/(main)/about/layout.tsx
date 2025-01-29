@@ -4,7 +4,7 @@ export const experimental_ppr = true;
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {
   return (
-    <article className="max-w-7xl mx-auto">
+    <article className="max-w-7xl mx-auto p-6">
       <Suspense fallback={<div>Loading...</div>}>
         <Distance />
       </Suspense>
@@ -20,6 +20,7 @@ async function Distance() {
   const response = await fetch(`${ABSOLUTE_URL}/api/geo`);
   if (response.ok) {
     geo = await response.json();
+    console.log("geo", geo);
   }
 
   if (!geo) {
@@ -27,7 +28,7 @@ async function Distance() {
   }
 
   return (
-    <div>
+    <div className="text-sm text-gray-500">
       You are in {geo.city}, roughly {geo.distance} km from me
     </div>
   );
