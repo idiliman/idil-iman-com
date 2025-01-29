@@ -29,13 +29,9 @@ async function Distance() {
     distance = await response.json();
   }
 
-  if (!distance) {
-    return null;
-  }
-
   return (
     <div className="text-sm text-gray-500">
-      You are in {JSON.stringify(city)}, roughly {distance} km from me
+      You are in {city}, roughly {distance} km from me
     </div>
   );
 }
