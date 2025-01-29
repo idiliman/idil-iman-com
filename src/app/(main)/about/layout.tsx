@@ -20,22 +20,22 @@ async function Distance() {
 
   const ABSOLUTE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://idiliman.com/";
 
-  let geo: { distance: string } | null = null;
+  let distance: string | null = null;
   const response = await fetch(`${ABSOLUTE_URL}/api/geo`, {
     method: "POST",
     body: JSON.stringify({ visitorCity: city }),
   });
   if (response.ok) {
-    geo = await response.json();
+    distance = await response.json();
   }
 
-  if (!geo) {
+  if (!distance) {
     return null;
   }
 
   return (
     <div className="text-sm text-gray-500">
-      You are in {JSON.stringify(city)}, roughly {geo.distance} km from me
+      You are in {JSON.stringify(city)}, roughly {distance} km from me
     </div>
   );
 }

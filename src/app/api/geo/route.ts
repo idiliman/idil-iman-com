@@ -22,9 +22,9 @@ export async function POST(request: Request) {
   const KL_LAT = 3.140853;
   const KL_LON = 101.693207;
 
-  const distance = haversine(Number(latitude), Number(longitude), KL_LAT, KL_LON);
+  const distance = haversine(Number(latitude), Number(longitude), KL_LAT, KL_LON).toFixed(2);
 
-  return new Response(JSON.stringify({ distance: distance.toFixed(2) }));
+  return new Response(JSON.stringify({ distance }));
 }
 
 export async function GET(request: Request) {
