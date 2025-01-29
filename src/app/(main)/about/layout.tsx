@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import { Suspense } from "react";
 
 export const experimental_ppr = true;
@@ -14,22 +15,26 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
 }
 
 async function Distance() {
-  const ABSOLUTE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://idiliman.com/";
+  const headersList = await headers();
+  const city = headersList.get("x-vercel-ip-city");
 
-  let geo: { distance: string; city: string } | null = null;
-  const response = await fetch(`${ABSOLUTE_URL}/api/geo`);
-  if (response.ok) {
-    geo = await response.json();
-    console.log("geo", geo);
-  }
+  // const ABSOLUTE_URL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://idiliman.com/";
 
-  if (!geo) {
-    return null;
-  }
+  // let geo: { distance: string; city: string } | null = null;
+  // const response = await fetch(`${ABSOLUTE_URL}/api/geo`);
+  // if (response.ok) {
+  //   geo = await response.json();
+  //   console.log("geo", geo);
+  // }
+
+  // if (!geo) {
+  //   return null;
+  // }
 
   return (
     <div className="text-sm text-gray-500">
-      You are in {geo.city}, roughly {geo.distance} km from me
+      {/* You are in {geo.city}, roughly {geo.distance} km from me */}
+      city: {city}
     </div>
   );
 }
