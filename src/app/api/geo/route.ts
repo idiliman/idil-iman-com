@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
   const distance = haversine(Number(latitude), Number(longitude), KL_LAT, KL_LON).toFixed(2);
 
-  return new Response(JSON.stringify({ distance }));
+  return new Response(distance);
 }
 
 export async function GET(request: Request) {
