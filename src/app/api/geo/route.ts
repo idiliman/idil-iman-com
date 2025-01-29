@@ -1,8 +1,10 @@
 import { geolocation } from "@vercel/functions";
 import NodeGeocoder from "node-geocoder";
+import fetch from "node-fetch";
 
 const geocoder = NodeGeocoder({
   provider: "openstreetmap",
+  fetch,
 });
 
 export async function POST(request: Request) {
