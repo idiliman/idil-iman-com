@@ -16,13 +16,6 @@ const nextConfig: NextConfig = {
       hmrRefreshes: true,
     },
   },
-  images: {
-    remotePatterns: [
-      {
-        hostname: "images.unsplash.com",
-      },
-    ],
-  },
 };
 
 const withMDX = createMDX({
