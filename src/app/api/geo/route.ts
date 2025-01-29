@@ -25,6 +25,30 @@ export async function POST(request: Request) {
   return new Response(JSON.stringify({ distance: distance.toFixed(2) }));
 }
 
+export async function GET(request: Request) {
+  const { city } = geolocation(request);
+
+  if (!city) {
+    return new Response("City not found", { status: 404 });
+  }
+
+  // Get coordinates from city name
+  const geoResults = await geocoder.geocode(city);
+
+  if (!geoResults || geoResults.length === 0) {
+    return new Response("City not found", { status: 404 });
+  }
+
+  const { latitude, longitude } = geoResults[0];
+
+  const KL_LAT = 3.140853;
+  const KL_LON = 101.693207;
+
+  const distance = haversine(Number(latitude), Number(longitude), KL_LAT, KL_LON);
+
+  return new Response(JSON.stringify({ distance: distance.toFixed(2) }));
+}
+
 function haversine(lat1: number, lon1: number, lat2: number, lon2: number) {
   const R = 6371; // Earth's radius in kilometers
 
