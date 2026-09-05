@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       pathname: "/u/54613218",
     },
 
-    protocol: "https",
+    protocol: "https"
     hostname: "media.licdn.com",
     pathname: "/dms/image/v2/**",
       
