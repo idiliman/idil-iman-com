@@ -1,13 +1,12 @@
 export const site = {
   profile: {
     email: "idil.iman1999@gmail.com",
-    picture:
-      "https://media.licdn.com/dms/image/v2/D5603AQHwMSW2FhC9SA/profile-displayphoto-shrink_400_400/B56ZQ6ZyMxH0Ag-/0/1736146626972?e=1790208000&v=beta&t=oWRU2DzZyDUmfoze0M9VUB8DacrIDe9S1LPqLYfEr5w",
+    picture: "/me.png",
   },
   seo: {
     title: "Idil Iman",
     subtitle: "Software Engineer",
-    description: "Web, Mobile | Full Stack Development | AI",
+    description: "Full Stack Development | Web, Mobile | AI",
     url: "https://idiliman.com",
     lang: "en",
   },

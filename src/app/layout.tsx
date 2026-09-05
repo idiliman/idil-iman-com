@@ -30,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SoundProvider>
           <main className="mx-auto flex min-h-dvh max-w-xl flex-col px-6 py-12 sm:py-20">
             <Header />
+
             <div className="mb-4 mt-10 flex flex-1 flex-col gap-12 sm:gap-16 sm:mt-14">
               {children}
             </div>

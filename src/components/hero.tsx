@@ -20,6 +20,7 @@ export function Hero({
           width={56}
           height={56}
           className="size-14 shrink-0 rounded-sm object-cover"
+          priority={true}
         />
 
         <div className="flex flex-col gap-0.5">
