@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { site } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Idil Iman | Software Engineer",
-  description:
-    "Idil Iman is a software engineer based in Kuala Lumpur, Malaysia. He is a full stack developer with a passion for building web applications and mobile applications.",
+  title: `${site.seo.title} | ${site.seo.subtitle}`,
+  description: site.seo.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -26,7 +26,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <main className="mx-auto flex min-h-dvh max-w-xl flex-col px-6 py-12 sm:py-20">
-          <div className="mb-4 flex flex-1 flex-col gap-12 sm:gap-16">{children}</div>
+          <div className="mb-4 flex flex-1 flex-col gap-12 sm:gap-16">
+            {children}
+          </div>
 
           <footer className="text-sm text-muted/40">
             <span>Designed + Coded with by Me</span>
