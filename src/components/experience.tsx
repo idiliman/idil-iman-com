@@ -12,10 +12,11 @@ export function Experience() {
         {items.map((item, index) => {
           const row = (
             <>
-              <div className="flex items-baseline gap-2">
+              <div className="flex items-baseline justify-between gap-2 w-full">
                 <span className="font-medium group-hover:underline">
                   {item.company}
                 </span>
+
                 <span className="text-sm text-muted">{item.role}</span>
               </div>
               <span className="shrink-0 text-sm text-muted/60">
