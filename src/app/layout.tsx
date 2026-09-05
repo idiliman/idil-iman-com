@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               {children}
             </div>
 
-            <footer className="text-sm text-muted/40">
+            <footer className="text-sm text-muted">
               <span>Designed + Coded with by Me</span>
             </footer>
           </main>

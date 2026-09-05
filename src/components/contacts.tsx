@@ -5,8 +5,8 @@ export function Contacts() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h3 className="font-serif text-lg italic">
-        Contacts<span className="text-primary">.</span>
+      <h3 className="font-serif text-lg italic text-primary">
+        Contacts<span>.</span>
       </h3>
       <ul className="flex flex-col">
         {items.map((item, index) => {
