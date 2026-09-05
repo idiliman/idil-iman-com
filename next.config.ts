@@ -14,9 +14,9 @@ const nextConfig: NextConfig = {
   protocol: "https",
     hostname: "media.licdn.com",
       pathname: "/dms/image/v2/**",
-      },
+      
     ],
-  }
+}
 };
 
 export default nextConfig;
