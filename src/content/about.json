@@ -1,0 +1,51 @@
+{
+  "fullName": "Idil Iman",
+  "headline": "Software Engineer",
+  "pronouns": "he/him",
+  "location": {
+    "city": "Kuala Lumpur",
+    "country": "Malaysia"
+  },
+  "bio": "Idil Iman is a software engineer based in Kuala Lumpur, Malaysia. He is a full stack developer with a passion for building web applications and mobile applications.",
+  "currentRole": {
+    "company": "Siroi Solutions",
+    "companyUrl": "https://siroisolutions.com/",
+    "role": "Software Engineer",
+    "since": "2026",
+    "focus": "Involved in full product development lifecycle, focused on web, api and mobile development. Managing product development from ideation to deployment. Responsible for automatic cicd deployment pipeline."
+  },
+  "pastRoles": [
+    {
+      "company": "Freelance",
+      "role": "Design & Development",
+      "period": "2025 — 2026",
+      "summary": "Independent software engineering work for startups and agencies"
+    },
+    {
+      "company": "iSmartUrus Sdn Bhd",
+      "companyUrl": "https://ismarturus.com/",
+      "role": "Software Engineer",
+      "period": "2024 — 2025",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "company": "Devwiz",
+      "role": "Software Engineer",
+      "period": "2023 — 2024",
+      "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ],
+  "stack": [
+    "React",
+    "Next.js",
+    "React Native",
+    "TypeScript",
+    "Tailwind CSS",
+    "Prisma ORM",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "Github"
+  ],
+  "interests": ["AI", "Full Stack Development"]
+}
