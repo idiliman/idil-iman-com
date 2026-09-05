@@ -10,10 +10,10 @@ const nextConfig: NextConfig = {
       hostname: "avatars.githubusercontent.com",
       pathname: "/u/54613218",
     },
-      {
-  protocol: "https",
+
+    protocol: "https",
     hostname: "media.licdn.com",
-      pathname: "/dms/image/v2/**",
+    pathname: "/dms/image/v2/**",
       
     ],
 }
