@@ -1,3 +1,4 @@
+import { Contacts } from "@/components/contacts";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
 import { site } from "@/lib/site";
@@ -12,6 +13,7 @@ export default function Home() {
         picture={site.profile.picture}
       />
       <Experience />
+      <Contacts />
     </div>
   );
 }

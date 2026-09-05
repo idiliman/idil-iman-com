@@ -8,7 +8,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Component organization
+# Project Instructions
+
+## Component organization
 
 - Keep page and feature components focused on their domain behavior. Before
   adding a nested component, decide whether it is feature-specific or a
@@ -38,3 +40,14 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
   solely for convenience.
 - During review, check touched components for extraction opportunities without
   expanding the change into unrelated refactoring.
+
+## Code Style
+
+- Use TypeScript for all new files
+- Prefer functional components in React
+- Use snake_case
+
+## Architecture
+
+- Follow the repository pattern
+- Keep business logic in service layers

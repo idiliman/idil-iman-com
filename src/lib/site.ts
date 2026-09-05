@@ -15,6 +15,23 @@ export const site = {
     github: "https://github.com/idiliman",
     linkedin: "https://www.linkedin.com/in/idil-iman/",
   },
+  contacts: [
+    {
+      label: "Email",
+      value: "idil.iman1999@gmail.com",
+      href: "mailto:idil.iman1999@gmail.com",
+    },
+    {
+      label: "GitHub",
+      value: "github.com/idiliman",
+      href: "https://github.com/idiliman",
+    },
+    {
+      label: "LinkedIn",
+      value: "linkedin.com/in/idil-iman",
+      href: "https://www.linkedin.com/in/idil-iman/",
+    },
+  ],
   experience: [
     {
       company: "Siroi Solutions Sdn. bhd.",
