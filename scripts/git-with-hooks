@@ -1,0 +1,33 @@
+#!/bin/sh
+# Cursor Source Control injects core.hooksPath=/dev/null via GIT_CONFIG_*
+# (bug since 3.15.6). Drop that pin so Husky can run on UI commits.
+
+REAL_GIT="${CURSOR_REAL_GIT:-/usr/bin/git}"
+
+if [ -n "${GIT_CONFIG_COUNT:-}" ]; then
+  i=0
+  new_i=0
+  while [ "$i" -lt "$GIT_CONFIG_COUNT" ]; do
+    eval "key=\${GIT_CONFIG_KEY_$i-}"
+    eval "val=\${GIT_CONFIG_VALUE_$i-}"
+    unset "GIT_CONFIG_KEY_$i"
+    unset "GIT_CONFIG_VALUE_$i"
+    if [ "$key" = "core.hooksPath" ] && {
+      [ "$val" = "/dev/null" ] || [ "$val" = "NUL" ]
+    }; then
+      :
+    else
+      eval "export GIT_CONFIG_KEY_$new_i=\"\$key\""
+      eval "export GIT_CONFIG_VALUE_$new_i=\"\$val\""
+      new_i=$((new_i + 1))
+    fi
+    i=$((i + 1))
+  done
+  if [ "$new_i" -eq 0 ]; then
+    unset GIT_CONFIG_COUNT
+  else
+    export GIT_CONFIG_COUNT="$new_i"
+  fi
+fi
+
+exec "$REAL_GIT" "$@"
